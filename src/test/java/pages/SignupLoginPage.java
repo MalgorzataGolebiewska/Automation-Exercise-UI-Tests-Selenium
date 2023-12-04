@@ -96,4 +96,5 @@ public class SignupLoginPage {
     public WebElement getErrorText() {
         return errorText;
     }
+
 }

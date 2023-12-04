@@ -24,7 +24,6 @@ public class LogOutUserTestCase extends BaseTest{
 
     @Test
     public void loginUserWithCorrectEmailAndPassword() {
-
         UserData userData = new UserData();
 
         SignupLoginPage signupLoginPage = new HomePage(driver)

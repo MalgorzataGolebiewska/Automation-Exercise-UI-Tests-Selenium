@@ -9,7 +9,6 @@ public class IncorrectUserLoginTestCase extends BaseTest {
 
     @Test
     public void incorrectUserLoginTestCase() {
-
         HomePage homePage = new HomePage(driver);
         Assert.assertEquals(homePage.getPageCenterTitle().getText(), "FEATURES ITEMS");
 

@@ -46,10 +46,10 @@ public class CreateAccountPage {
     private WebElement companyInput;
 
     @FindBy(id = "address1")
-    private WebElement address1Input;
+    private WebElement firstAddressInput;
 
     @FindBy(id = "address2")
-    private WebElement address2Input;
+    private WebElement secondAddressInput;
 
     @FindBy(id = "country")
     private WebElement countrySelect;
@@ -80,7 +80,6 @@ public class CreateAccountPage {
         return enterAccountHeader;
     }
 
-
     public AccountCreatedPage openAccountCreatedPage(UserData userData) {
         mrsGenderRadio.click();
         passwordInput.sendKeys(userData.getPassword());
@@ -99,8 +98,8 @@ public class CreateAccountPage {
         firstNameInput.sendKeys(userData.getFirstName());
         lastNameInput.sendKeys(userData.getLastName());
         companyInput.sendKeys(userData.getCompany());
-        address1Input.sendKeys(userData.getFirstAddress());
-        address2Input.sendKeys(userData.getSecondAddress());
+        firstAddressInput.sendKeys(userData.getFirstAddress());
+        secondAddressInput.sendKeys(userData.getSecondAddress());
 
         Select selectCountry = new Select(countrySelect);
         selectCountry.selectByVisibleText("Canada");

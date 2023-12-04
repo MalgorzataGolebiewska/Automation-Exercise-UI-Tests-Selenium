@@ -31,7 +31,6 @@ public class RegisterWithExistingEmailTestCase extends BaseTest{
 
         Assert.assertEquals(signupLoginPage.getLoginUserHeader().getText(),"Login to your account");
         Assert.assertEquals(signupLoginPage.getEmailExistText().getText(),"Email Address already exist!");
-
-
     }
+
 }

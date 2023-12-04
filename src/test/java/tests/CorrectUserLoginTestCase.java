@@ -19,7 +19,6 @@ public class CorrectUserLoginTestCase extends BaseTest {
 
     @Test
     public void loginUserWithCorrectEmailAndPassword() {
-        //given
         UserData userData = new UserData();
 
         SignupLoginPage signupLoginPage = new HomePage(driver)
@@ -31,6 +30,5 @@ public class CorrectUserLoginTestCase extends BaseTest {
         DeleteAccountPage deleteAccountPage = userPage
                 .deleteAccount();
         Assert.assertEquals(deleteAccountPage.getDeleteAccountInfo().getText(), "ACCOUNT DELETED!");
-
     }
 }
