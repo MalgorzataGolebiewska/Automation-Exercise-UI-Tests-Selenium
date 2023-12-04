@@ -2,6 +2,8 @@ package models;
 
 import lombok.Getter;
 
+import java.io.File;
+
 @Getter
 public class UserData {
 
@@ -18,6 +20,8 @@ public class UserData {
     private String zipcode;
     private String mobileNumber;
 
+    private String fileToUpload;
+
     public UserData() {
         this.name = "test";
         this.email = "automated.testinvx@gmail.com";
@@ -31,6 +35,7 @@ public class UserData {
         this.city = "Bridgeport";
         this.zipcode = "00-000";
         this.mobileNumber = "123456789";
+        this.fileToUpload = "src/test/resources/jajo.jpg";
     }
 
 }
