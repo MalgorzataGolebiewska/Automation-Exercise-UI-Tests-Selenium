@@ -13,6 +13,9 @@ public class HomePage {
     @FindBy(xpath = "//div/ul/li[4]")
     private WebElement signupLoginButton;
 
+    @FindBy(xpath = "//div/ul/li[8]")
+    private WebElement contactUsButton;
+
     private final WebDriver driver;
 
     public HomePage(WebDriver driver) {
@@ -28,6 +31,11 @@ public class HomePage {
     public SignupLoginPage openSignupLoginPage() {
         signupLoginButton.click();
         return new SignupLoginPage(driver);
+    }
+
+    public ContactUsPage openContactUsPage() {
+        contactUsButton.click();
+        return new ContactUsPage(driver);
     }
 
 }
