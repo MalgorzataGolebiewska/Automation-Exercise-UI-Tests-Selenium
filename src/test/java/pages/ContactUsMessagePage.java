@@ -28,4 +28,5 @@ public class ContactUsMessagePage {
         homeButton.click();
         return new HomePage(driver);
     }
+
 }

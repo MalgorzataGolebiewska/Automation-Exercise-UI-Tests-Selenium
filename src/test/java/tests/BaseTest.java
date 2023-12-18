@@ -19,8 +19,8 @@ public class BaseTest {
         driver.get("https://automationexercise.com/");
     }
 
-//    @AfterMethod
-//    public void tearDown() {
-//        driver.quit();
-//    }
+    @AfterMethod
+    public void tearDown() {
+        driver.quit();
+    }
 }

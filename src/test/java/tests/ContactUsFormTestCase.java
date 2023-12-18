@@ -28,4 +28,5 @@ public class ContactUsFormTestCase extends BaseTest {
                 .clickHomeButton();
         Assert.assertEquals(backToHomePage.getPageCenterTitle().getText(),"FEATURES ITEMS");
     }
+
 }
