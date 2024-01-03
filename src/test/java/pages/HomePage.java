@@ -13,6 +13,12 @@ public class HomePage {
     @FindBy(xpath = "//div/ul/li[4]")
     private WebElement signupLoginButton;
 
+    @FindBy(xpath = "//div/ul/li[5]")
+    private WebElement testCaseButton;
+
+    @FindBy(id = "ad_position_box")
+    private WebElement advertisment;
+
     private final WebDriver driver;
 
     public HomePage(WebDriver driver) {
@@ -30,4 +36,11 @@ public class HomePage {
         return new SignupLoginPage(driver);
     }
 
+    public TestCasePage openTestCasePage() {
+        testCaseButton.click();
+        //nie znalazłam innego rozwiązania na reklamę google, stąd odświeżenie i ponowne kliknięcie
+        driver.navigate().refresh();
+        testCaseButton.click();
+        return new TestCasePage(driver);
+    }
 }

@@ -4,6 +4,8 @@ import models.UserData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -31,7 +33,7 @@ public class SeleniumHelper {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public static void registerUser(WebDriver driver){
+    public static void registerUser(WebDriver driver) {
 
         UserData userData = new UserData();
 
@@ -47,7 +49,7 @@ public class SeleniumHelper {
 
     }
 
-    public static void deleteUser(WebDriver driver){
+    public static void deleteUser(WebDriver driver) {
 
         UserData userData = new UserData();
 
@@ -60,6 +62,28 @@ public class SeleniumHelper {
         DeleteAccountPage deleteAccountPage = userPage
                 .deleteAccount();
         Assert.assertEquals(deleteAccountPage.getDeleteAccountInfo().getText(), "ACCOUNT DELETED!");
+    }
+
+    public static void dismissAd(WebDriver driver, WebElement webElement) {
+//        try {
+//            driver.switchTo().frame("card");
+//            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+//            wait.until(ExpectedConditions.elementToBeClickable(webElement));
+//            webElement.click();
+//        } catch (Exception e) {
+//            System.out.println(e.getMessage());
+//        }
+    }
+
+    public static void closeIframeAd(WebDriver driver){
+            WebElement iframeElement = driver.findElement(By.xpath("//ins[@data-ad-status='filled']/div/iframe"));
+            driver.switchTo().frame(iframeElement);
+        WebElement clickable = driver.findElement(By.id("ad_iframe"));
+        new Actions(driver)
+                .clickAndHold(clickable)
+                .perform();
+
+
     }
 
 }
